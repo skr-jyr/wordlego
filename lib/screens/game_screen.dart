@@ -194,7 +194,7 @@ class _GameScreenState extends State<GameScreen> {
     return Scaffold(
       backgroundColor: bgColor,
       appBar: AppBar(
-        title: const Text('WordLego - Pass & Play'),
+        title: const Text('WordLego - Offline Mode'),
         backgroundColor: tealDark,
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(50),

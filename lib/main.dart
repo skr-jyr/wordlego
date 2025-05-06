@@ -6,14 +6,11 @@ import 'screens/game_screen.dart'; // Import your GameScreen
 import 'screens/result_screen.dart'; // Import your ResultScreen
 import 'services/word_validator.dart';
 
-import 'dart:io';
-
 void main() async {
-  await dotenv.load(fileName: ".env"); // Load your .env file
-  final validator = WordValidator();
+  // Load your .env file asynchronously
+  await dotenv.load(fileName: ".env");
 
-  final isValid = await validator.isValidWord('example', 'theme');
-  print('Is valid: $isValid');
+  runApp(const WordLegoApp());
 }
 
 class WordLegoApp extends StatelessWidget {
@@ -82,5 +79,40 @@ class WordLegoApp extends StatelessWidget {
         return null;
       },
     );
+  }
+}
+
+class Initializer extends StatefulWidget {
+  const Initializer({Key? key}) : super(key: key);
+
+  @override
+  _InitializerState createState() => _InitializerState();
+}
+
+class _InitializerState extends State<Initializer> {
+  bool _isInitialized = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _initializeApp();
+  }
+
+  Future<void> _initializeApp() async {
+    final validator = WordValidator();
+    final isValid = await validator.isValidWord('example', 'theme');
+    print('Is valid: $isValid');
+    setState(() {
+      _isInitialized = true;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (!_isInitialized) {
+      return const Center(child: CircularProgressIndicator());
+    } else {
+      return const WordLegoApp();
+    }
   }
 }
