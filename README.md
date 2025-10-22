@@ -1,16 +1,11 @@
-# wordlego
 
-A new Flutter project.
+  # WordLego Game UI Design
 
-## Getting Started
+  This is a code bundle for WordLego Game UI Design. The original project is available at https://www.figma.com/design/cMMEjy8GGDhsyaulMEgqmi/WordLego-Game-UI-Design.
 
-This project is a starting point for a Flutter application.
+  ## Running the code
 
-A few resources to get you started if this is your first Flutter project:
+  Run `npm i` to install the dependencies.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+  Run `npm run dev` to start the development server.
+  
